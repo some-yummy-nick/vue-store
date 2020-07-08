@@ -1,19 +1,18 @@
 <template>
-    <h1>Hello vue</h1>
+
+    <v-app>
+        <Navbar/>
+    </v-app>
+
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+    import Navbar from './components/Navbar'
 
-export default {
-  name: 'App',
-
-  components: {
-    // HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+    export default {
+        name: 'App',
+        components:{
+            Navbar
+        }
+    };
 </script>
