@@ -1,5 +1,9 @@
 # vue-store
+***
+По курсу на [Udemy](https://www.udemy.com/course/vuejs_25/)
 
+[Результат](https://some-yummy-vue-store.netlify.app)
+***
 ## Project setup
 ```
 yarn install

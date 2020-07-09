@@ -1,14 +1,19 @@
 <template>
-  <div class="home">
-    home
-  </div>
+    <v-container>
+      <v-layout row>
+        <v-flex xs12>
+          <h1>Home</h1>
+        </v-flex>
+      </v-layout>
+    </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'Home'
-}
+  export default {
+    name: 'Home',
+    data() {
+      return {}
+    }
+  }
 </script>
