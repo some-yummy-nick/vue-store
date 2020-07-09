@@ -9,14 +9,12 @@
 </template>
 
 <script>
-  export default {
-    name: "Register",
-    data() {
-      return {}
-    }
-  }
+export default {
+  name: 'Register',
+  data() {
+    return {}
+  },
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
