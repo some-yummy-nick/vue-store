@@ -3,36 +3,39 @@
     <section class="product elevation-4">
       <v-layout row wrap>
         <v-flex xs12 lg6>
-          <img
-            class="product__image"
-            src="https://image.ibb.co/fZzq1o/Lenovo_Legion_Y520.jpg"
-            alt=""
-          />
+          <img class="product__image" :src="product.imageSrc" alt="" />
         </v-flex>
         <v-flex xs12 lg6>
           <div class="product__info">
-            <div class="product__title display-1 mb-3">Lorem ipsum.</div>
+            <div class="product__title display-1 mb-3">{{ product.title }}</div>
             <p class="product__category title">
-              <span class="product__title">Vendor: </span>lorem
+              <span class="product__title">Vendor: </span
+              >{{
+                product.vendor.charAt(0).toUpperCase() +
+                product.vendor.substring(1)
+              }}
             </p>
             <p class="product__price title">
-              <span class="product__title">Price: </span>$ 1000
+              <span class="product__title">Price: </span>$ {{ product.price }}
             </p>
             <p class="product__color title">
               <span class="product__title">Color: </span>
               <span
                 class="product__color-bg"
-                :title="'purple'"
-                :style="{backgroundColor: 'purple'}"
+                :title="product.color"
+                :style="{backgroundColor: product.color}"
               ></span>
             </p>
             <p class="title">
-              <span class="product__title">Material: </span>lorem
+              <span class="product__title">Material: </span
+              >{{
+                product.material.charAt(0).toUpperCase() +
+                product.material.substring(1)
+              }}
             </p>
             <div class="title mb-5">
               <p class="product__title mb-2">Description:</p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
-              totam?
+              {{ product.description }}
             </div>
             <v-btn color="primary" class="headline mr-2">Edit</v-btn>
             <v-btn color="primary" class="headline">Buy</v-btn>
@@ -46,8 +49,12 @@
 <script>
 export default {
   name: 'Product',
-  data() {
-    return {}
+  props: ['id'],
+  computed: {
+    product() {
+      const id = this.id
+      return this.$store.getters.productById(id)
+    },
   },
 }
 </script>

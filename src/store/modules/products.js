@@ -4,7 +4,7 @@ export default {
       {
         id: '1',
         title: 'Lenovo Legion Y520',
-        vendor: 'Lenovo',
+        vendor: 'lenovo',
         color: 'black',
         material: 'metal/plastic',
         description:
@@ -38,6 +38,11 @@ export default {
     },
     myProducts(state) {
       return state.products
+    },
+    productById(state) {
+      return productId => {
+        return state.products.find(product => product.id === productId)
+      }
     },
   },
 }
