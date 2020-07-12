@@ -44,7 +44,7 @@
               <v-btn
                 dark
                 color="light-blue darken-4 rounded-pill"
-                outline
+                outlined
                 :to="'/product/' + product.id"
                 >Description
               </v-btn>

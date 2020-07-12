@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
-import * as fb from 'firebase/app'
+import * as fb from 'firebase'
 
 import store from './store'
 
@@ -15,14 +15,13 @@ new Vue({
   render: h => h(App),
   created() {
     const firebaseConfig = {
-      apiKey: 'AIzaSyDOCAbC123dEf456GhI789jKl01-MnO',
-      authDomain: 'myapp-project-123.firebaseapp.com',
-      databaseURL: 'https://myapp-project-123.firebaseio.com',
-      projectId: 'myapp-project-123',
-      storageBucket: 'myapp-project-123.appspot.com',
-      messagingSenderId: '65211879809',
-      appId: '1:65211879909:web:3ae38ef1cdcb2e01fe5f0c',
-      measurementId: 'G-8GSGZQ44ST',
+      apiKey: 'AIzaSyAGErU0AGrQ-vmKbgdbJfD-TvLbSuE7QYg',
+      authDomain: 'vue-store-85591.firebaseapp.com',
+      databaseURL: 'https://vue-store-85591.firebaseio.com',
+      projectId: 'vue-store-85591',
+      storageBucket: 'vue-store-85591.appspot.com',
+      messagingSenderId: '743905533286',
+      appId: '1:743905533286:web:ad29b19e4626387e0c7ca7',
     }
     fb.initializeApp(firebaseConfig)
   },
