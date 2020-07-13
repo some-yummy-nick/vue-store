@@ -37,7 +37,7 @@
 							<p class="product__title mb-2">Description:</p>
 							{{ product.description }}
 						</div>
-						<EditProduct :product="product" />
+						<EditProduct :product="product" v-if="isOwner" />
 						<v-btn color="primary" class="headline">Buy</v-btn>
 					</div>
 				</v-flex>
@@ -64,6 +64,9 @@ export default {
 		},
 		loading() {
 			return this.$store.getters.loading
+		},
+		isOwner() {
+			return this.product.ownerId === this.$store.getters.user.id
 		},
 	},
 }
