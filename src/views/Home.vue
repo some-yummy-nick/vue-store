@@ -49,7 +49,7 @@
 									:to="'/product/' + product.id"
 									>Description
 								</v-btn>
-								<v-btn dark color="light-blue darken-4">Add to cart </v-btn>
+								<v-btn dark color="light-blue darken-4">Add to cart</v-btn>
 							</v-card-actions>
 						</v-card>
 					</v-flex>
@@ -60,12 +60,7 @@
 			<v-container>
 				<v-layout row>
 					<v-flex xs12 class="text-center pt-5">
-						<v-progress-circular
-							:size="100"
-							:width="4"
-							color="purple"
-							indeterminate
-						></v-progress-circular>
+						<Loading />
 					</v-flex>
 				</v-layout>
 			</v-container>
@@ -74,8 +69,11 @@
 </template>
 
 <script>
+import Loading from '@/components/Loading'
+
 export default {
 	name: 'Home',
+	components: {Loading},
 	computed: {
 		loading() {
 			return this.$store.getters.loading
