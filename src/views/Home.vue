@@ -44,14 +44,12 @@
 								<v-spacer></v-spacer>
 								<v-btn
 									dark
-									color="light-blue darken-4 rounded-pill"
+									color="light-blue darken-4"
 									outlined
 									:to="'/product/' + product.id"
 									>Description
 								</v-btn>
-								<v-btn dark color="light-blue darken-4 rounded-pill"
-									>Add to cart
-								</v-btn>
+								<v-btn dark color="light-blue darken-4">Add to cart </v-btn>
 							</v-card-actions>
 						</v-card>
 					</v-flex>

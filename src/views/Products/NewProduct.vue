@@ -46,15 +46,22 @@
 				</v-form>
 				<v-layout class="mb-3">
 					<v-flex xs12>
-						<v-btn color="warning">
+						<v-btn color="warning" @click="upload">
 							Upload
 							<v-icon right dark>mdi-cloud-upload</v-icon>
 						</v-btn>
+						<input
+							type="file"
+							@change="onFileChange"
+							ref="fileInput"
+							style="display: none;"
+							accept="image/*"
+						/>
 					</v-flex>
 				</v-layout>
 				<v-layout>
 					<v-flex xs12>
-						<img src="" alt="" height="200" />
+						<img :src="imageSrc" alt="" height="200" v-if="imageSrc" />
 					</v-flex>
 				</v-layout>
 				<v-layout>
@@ -73,7 +80,7 @@
 							:loading="loading"
 							color="success"
 							@click="createProduct"
-							:disabled="!valid || loading"
+							:disabled="!valid || !image || loading"
 							>Create product
 						</v-btn>
 					</v-flex>
@@ -96,6 +103,8 @@ export default {
 			material: '',
 			promo: false,
 			valid: false,
+			image: null,
+			imageSrc: '',
 		}
 	},
 	computed: {
@@ -105,7 +114,7 @@ export default {
 	},
 	methods: {
 		createProduct() {
-			if (this.$refs.form.validate()) {
+			if (this.$refs.form.validate() && this.image) {
 				const product = {
 					title: this.title,
 					vendor: this.vendor,
@@ -114,6 +123,7 @@ export default {
 					color: this.color,
 					material: this.material,
 					promo: this.promo,
+					image: this.image,
 				}
 
 				this.$store
@@ -123,6 +133,18 @@ export default {
 					})
 					.catch(() => {})
 			}
+		},
+		upload() {
+			this.$refs.fileInput.click()
+		},
+		onFileChange(event) {
+			const file = event.target.files[0]
+			const reader = new FileReader()
+			reader.onload = () => {
+				this.imageSrc = reader.result
+			}
+			reader.readAsDataURL(file)
+			this.image = file
 		},
 	},
 }
