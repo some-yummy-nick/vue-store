@@ -5,6 +5,11 @@ import vuetify from './plugins/vuetify'
 import * as fb from 'firebase'
 
 import store from './store'
+import Buy from '@/components/Buy'
+import Loading from '@/components/Loading'
+
+Vue.component('Buy', Buy)
+Vue.component('Loading', Loading)
 
 Vue.config.productionTip = false
 

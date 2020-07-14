@@ -44,12 +44,12 @@
 								<v-spacer></v-spacer>
 								<v-btn
 									dark
-									color="light-blue darken-4"
+									class="light-blue darken-4 mr-2"
 									outlined
 									:to="'/product/' + product.id"
 									>Description
 								</v-btn>
-								<v-btn dark color="light-blue darken-4">Add to cart</v-btn>
+								<Buy :product="product" />
 							</v-card-actions>
 						</v-card>
 					</v-flex>
@@ -69,11 +69,8 @@
 </template>
 
 <script>
-import Loading from '@/components/Loading'
-
 export default {
 	name: 'Home',
-	components: {Loading},
 	computed: {
 		loading() {
 			return this.$store.getters.loading

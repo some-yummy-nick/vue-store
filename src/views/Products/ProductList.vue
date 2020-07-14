@@ -4,7 +4,7 @@
 			<v-flex xs12 sm6 offset-sm3>
 				<h1 class="text--secondary mb-3">My products</h1>
 				<v-card class="mb-2" v-for="product in myProducts" :key="product.id">
-					<v-layout>
+					<v-layout row>
 						<v-flex xs4>
 							<v-img contain height="200" :src="product.imageSrc"></v-img>
 						</v-flex>
@@ -26,7 +26,7 @@
 		</v-layout>
 		<v-layout v-else-if="!loading && myProducts.length === 0">
 			<v-flex xs-12 class="text-center">
-				<h1 class="text-primary">You have no products</h1>
+				<h1 class="text--primary">You have no products</h1>
 			</v-flex>
 		</v-layout>
 		<v-layout v-else>

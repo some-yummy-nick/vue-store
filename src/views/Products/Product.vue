@@ -38,7 +38,7 @@
 							{{ product.description }}
 						</div>
 						<EditProduct :product="product" v-if="isOwner" />
-						<v-btn color="primary" class="headline">Buy</v-btn>
+						<Buy :product="product" />
 					</div>
 				</v-flex>
 			</v-layout>
@@ -51,11 +51,10 @@
 
 <script>
 import EditProduct from './EditProduct'
-import Loading from '@/components/Loading'
 
 export default {
 	name: 'Product',
-	components: {EditProduct, Loading},
+	components: {EditProduct},
 	props: ['id'],
 	computed: {
 		product() {
@@ -105,6 +104,23 @@ export default {
 			height: 20px;
 			border: 1px solid #2b2b2b;
 			border-radius: 10px;
+		}
+	}
+
+	@media screen and (max-width: 1270px) {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 620px) {
+		text-align: left;
+
+		&__image {
+			width: 100%;
+			object-fit: contain;
+		}
+
+		&__title {
+			text-align: center;
 		}
 	}
 }
